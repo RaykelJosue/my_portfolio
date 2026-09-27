@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio | Técnico IT & Desarrollador</title>
+
+    <!-- Tailwind CSS (CDN) + Configuración personalizada -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="js/tailwind-config.js"></script>
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Script previo para evitar el "parpadeo" blanco (FOUC) en modo oscuro -->
+    <script src="js/theme-init.js"></script>
+</head>
+<body class="antialiased bg-slate-50 text-slate-800 dark:bg-cyberBg dark:text-slate-200 flex flex-col min-h-screen">
+
+    <!-- Barra de Navegación -->
+    <nav class="bg-white dark:bg-cyberSurface shadow-md dark:shadow-slate-800/50 sticky top-0 z-50 transition-colors duration-300">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-xl font-bold text-slate-800 dark:text-white hover:text-primary dark:hover:text-cyber transition-colors flex items-center">
+                    <i class="fa-solid fa-terminal mr-2 text-primary dark:text-cyber"></i>PyKel
+                </a>
+
+                <div class="hidden md:flex space-x-8 items-center">
+                    <a href="#sobre-mi" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-cyber font-medium transition-colors">Sobre Mí</a>
+                    <a href="#servicios" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-cyber font-medium transition-colors">Servicios IT</a>
+                    <a href="#proyectos" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-cyber font-medium transition-colors">DevOps</a>
+                    <a href="#laboratorios" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-cyber font-medium transition-colors">Ciberseguridad</a>
+
+                    <button id="theme-toggle" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2.5 transition-colors focus:outline-none">
+                        <i id="theme-toggle-icon" class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <a href="#contacto" class="bg-primary dark:bg-cyber dark:text-slate-900 text-white px-5 py-2 rounded-lg font-semibold hover:bg-blue-600 dark:hover:bg-cyan-300 transition-colors shadow-sm">Contacto</a>
+                </div>
+
+                <div class="md:hidden flex items-center gap-4">
+                    <button id="theme-toggle-mobile" class="text-slate-500 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg text-lg p-2 transition-colors focus:outline-none">
+                        <i id="theme-toggle-icon-mobile" class="fa-solid fa-moon"></i>
+                    </button>
+
+                    <button id="mobile-menu-btn" class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-cyber focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menú Móvil Desplegable -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white dark:bg-cyberSurface border-t border-slate-100 dark:border-slate-800 px-4 pt-2 pb-4 space-y-2 shadow-inner">
+            <a href="#sobre-mi" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-cyber hover:bg-slate-50 dark:hover:bg-slate-800/50">Sobre Mí</a>
+            <a href="#servicios" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-cyber hover:bg-slate-50 dark:hover:bg-slate-800/50">Servicios IT</a>
+            <a href="#proyectos" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-cyber hover:bg-slate-50 dark:hover:bg-slate-800/50">Proyectos DevOps</a>
+            <a href="#laboratorios" class="block px-3 py-2 rounded-md text-base font-medium text-slate-700 dark:text-slate-300 hover:text-primary dark:hover:text-cyber hover:bg-slate-50 dark:hover:bg-slate-800/50">Labs Ciberseguridad</a>
+            <a href="#contacto" class="block px-3 py-2 rounded-md text-base font-medium bg-primary dark:bg-cyber dark:text-slate-900 text-white hover:bg-blue-600 dark:hover:bg-cyan-300 mt-4 text-center">Contacto</a>
+        </div>
+    </nav>
+
+    <!-- Contenido Principal -->
+    <main class="flex-grow">
+
+        <!-- Sección Hero -->
+        <section id="sobre-mi" class="pt-20 pb-16 md:pt-32 md:pb-24 px-4 bg-gradient-to-br from-slate-50 to-slate-100 dark:from-cyberBg dark:to-slate-900 transition-colors duration-300">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-block p-2 bg-blue-100 dark:bg-cyber/10 rounded-full mb-6">
+                    <i class="fa-solid fa-code text-3xl text-primary dark:text-cyber p-3"></i>
+                </div>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-6">
+                    Hola, soy <span class="text-primary dark:text-cyber">PyKel</span>
+                </h1>
+                <h2 class="text-xl md:text-2xl text-slate-600 dark:text-slate-400 font-medium mb-8 max-w-2xl mx-auto leading-relaxed">
+                    Técnico de Soporte IT en Caracas, Venezuela & en formación activa orientada a <span class="font-semibold text-slate-800 dark:text-slate-200">DevOps</span> y <span class="font-semibold text-slate-800 dark:text-slate-200">Ciberseguridad</span>.
+                </h2>
+                <p class="text-lg text-slate-500 dark:text-slate-400 mb-10 max-w-3xl mx-auto leading-relaxed">
+                    TSU en Informática con experiencia en soporte de primer y segundo nivel. Me especializo en el diagnóstico y resolución de incidencias de conectividad y sistemas Windows y Linux. Actualmente me sigo formando en ciberseguridad y automatización con Python/PowerShell. Busco aportar valor en roles de Service Desk, Help Desk y Soporte Técnico, mientras construyo bases sólidas para mi futuro.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#proyectos" class="bg-primary dark:bg-cyber text-white dark:text-slate-900 px-8 py-3 rounded-lg font-semibold hover:bg-blue-600 dark:hover:bg-cyan-300 transition-colors shadow-md hover:shadow-lg flex items-center justify-center">
+                        <i class="fa-solid fa-laptop-code mr-2"></i> Ver mis proyectos
+                    </a>
+                    <a href="#contacto" class="bg-white dark:bg-transparent border-2 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-300 px-8 py-3 rounded-lg font-semibold hover:border-primary dark:hover:border-cyber hover:text-primary dark:hover:text-cyber transition-colors flex items-center justify-center">
+                        <i class="fa-regular fa-envelope mr-2"></i> Contactar
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Servicios IT -->
+        <section id="servicios" class="py-20 px-4 bg-white dark:bg-cyberSurface transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Servicios de Soporte IT</h2>
+                    <div class="w-20 h-1 bg-primary dark:bg-cyber mx-auto rounded-full mb-4"></div>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        Ofrezco soluciones informáticas presenciales en <span class="font-semibold text-slate-800 dark:text-slate-200">Caracas, Venezuela</span>, garantizando el correcto funcionamiento de tus equipos y sistemas.
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Servicio 1 -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-8 border border-slate-100 dark:border-slate-700/50 hover:shadow-md dark:hover:border-cyber/50 transition-all">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-cyber/10 rounded-lg flex items-center justify-center mb-6 text-primary dark:text-cyber text-2xl">
+                            <i class="fa-solid fa-magnifying-glass-chart"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Revisión y Diagnóstico de Equipos</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">
+                            Evaluación exhaustiva de hardware y software para identificar fallas, lentitud o cuelgues. Mantenimiento preventivo y correctivo para optimizar el rendimiento.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 2 -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-8 border border-slate-100 dark:border-slate-700/50 hover:shadow-md dark:hover:border-cyber/50 transition-all">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-cyber/10 rounded-lg flex items-center justify-center mb-6 text-primary dark:text-cyber text-2xl">
+                            <i class="fa-brands fa-windows"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Instalación de SO y Software</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">
+                            Instalación limpia o formateo de sistemas operativos (Windows/Linux). Configuración inicial e instalación de los programas y utilidades necesarias a medida.
+                        </p>
+                    </div>
+
+                    <!-- Servicio 3 -->
+                    <div class="bg-slate-50 dark:bg-slate-800/50 rounded-xl p-8 border border-slate-100 dark:border-slate-700/50 hover:shadow-md dark:hover:border-cyber/50 transition-all">
+                        <div class="w-14 h-14 bg-blue-100 dark:bg-cyber/10 rounded-lg flex items-center justify-center mb-6 text-primary dark:text-cyber text-2xl">
+                            <i class="fa-solid fa-headset"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-slate-800 dark:text-white mb-3">Soporte y Conectividad</h3>
+                        <p class="text-slate-600 dark:text-slate-400 mb-4">
+                            Atención de incidencias de Nivel 1 y 2. Resolución de problemas de red local, conectividad, manejo de gestión de casos y escalamiento a niveles superiores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Proyectos DevOps -->
+        <section id="proyectos" class="py-20 px-4 bg-slate-50 dark:bg-cyberBg border-y border-slate-200 dark:border-slate-800 transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Prácticas & Laboratorios DevOps</h2>
+                    <div class="w-20 h-1 bg-primary dark:bg-cyber mx-auto rounded-full mb-4"></div>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        Documentación de mis ejercicios de clase y prácticas personales donde aplico conocimientos de contenedorización y automatización.
+                    </p>
+                </div>
+
+                <div class="space-y-12">
+                    <!-- Proyecto DevOps 1 -->
+                    <div class="bg-white dark:bg-cyberSurface rounded-xl shadow-sm border border-slate-100 dark:border-slate-700/50 overflow-hidden flex flex-col lg:flex-row transition-colors duration-300">
+                        <div class="lg:w-2/5 bg-slate-800 dark:bg-slate-900 p-8 flex items-center justify-center text-slate-300 border-b lg:border-b-0 lg:border-r border-slate-700">
+                            <div class="text-center">
+                                <i class="fa-brands fa-docker text-6xl mb-4 opacity-75 text-blue-400"></i>
+                                <p class="text-sm font-mono text-blue-200">[Entorno Docker]</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded">Docker</span>
+                                <span class="bg-gray-100 dark:bg-slate-700 text-gray-800 dark:text-gray-300 text-xs font-semibold px-2.5 py-0.5 rounded">Infraestructura</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Despliegue de Servicios con Docker</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                Práctica académica del curso de DevOps enfocada en el uso de contenedores. El ejercicio consistió en configurar e inicializar un servicio web utilizando Docker, entendiendo el ciclo de vida del contenedor y la gestión básica de imágenes.
+                            </p>
+                            <div class="mt-auto">
+                                <h4 class="text-sm font-semibold text-slate-900 dark:text-slate-200 mb-2">Conceptos aplicados:</h4>
+                                <ul class="list-disc list-inside text-sm text-slate-600 dark:text-slate-400 mb-6">
+                                    <li>Comandos básicos de Docker CLI.</li>
+                                    <li>Aislamiento de procesos.</li>
+                                    <li>Despliegue de servicios.</li>
+                                </ul>
+                                <a href="https://github.com/RaykelJosue/" target="_blank" class="inline-flex items-center text-primary dark:text-cyber font-semibold hover:text-blue-700 dark:hover:text-cyan-300 transition-colors">
+                                    Ver Perfil en GitHub <i class="fa-brands fa-github ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proyecto DevOps 2 -->
+                    <div class="bg-white dark:bg-cyberSurface rounded-xl shadow-sm border border-slate-100 dark:border-slate-700/50 overflow-hidden flex flex-col lg:flex-row-reverse transition-colors duration-300">
+                        <div class="lg:w-2/5 bg-slate-800 dark:bg-slate-900 p-8 flex items-center justify-center text-slate-300 border-b lg:border-b-0 lg:border-l border-slate-700">
+                            <div class="text-center">
+                                <i class="fa-brands fa-python text-6xl mb-4 opacity-75 text-yellow-400"></i>
+                                <p class="text-sm font-mono text-yellow-200">[Terminal / Scripts]</p>
+                            </div>
+                        </div>
+                        <div class="lg:w-3/5 p-8 md:p-10 flex flex-col justify-center">
+                            <div class="flex items-center gap-2 mb-3">
+                                <span class="bg-yellow-100 dark:bg-yellow-900/40 text-yellow-800 dark:text-yellow-400 text-xs font-semibold px-2.5 py-0.5 rounded">Python</span>
+                                <span class="bg-blue-100 dark:bg-blue-900/50 text-blue-800 dark:text-blue-300 text-xs font-semibold px-2.5 py-0.5 rounded">PowerShell</span>
+                            </div>
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-4">Automatización de Tareas IT (En Práctica)</h3>
+                            <p class="text-slate-600 dark:text-slate-400 mb-6 leading-relaxed">
+                                Como parte de mi desarrollo como Técnico IT, me encuentro elaborando pequeños scripts en Python y PowerShell. El objetivo de estas prácticas es familiarizarme con la automatización de tareas rutinarias de administración de sistemas y soporte.
+                            </p>
+                            <div class="mt-auto">
+                                <a href="https://github.com/RaykelJosue/" target="_blank" class="inline-flex items-center text-primary dark:text-cyber font-semibold hover:text-blue-700 dark:hover:text-cyan-300 transition-colors">
+                                    Explorar Repositorios <i class="fa-brands fa-github ml-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Laboratorios de Ciberseguridad -->
+        <section id="laboratorios" class="py-20 px-4 bg-white dark:bg-cyberSurface transition-colors duration-300">
+            <div class="max-w-6xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Rumbo a la Ciberseguridad</h2>
+                    <div class="w-20 h-1 bg-red-500 dark:bg-green-500 mx-auto rounded-full mb-4 transition-colors"></div>
+                    <p class="text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
+                        La ciberseguridad es una de mis grandes metas profesionales. Actualmente dedico tiempo a la formación en redes y fundamentos de seguridad.
+                    </p>
+                </div>
+
+                <div class="max-w-3xl mx-auto">
+                    <div class="border-2 border-dashed border-slate-300 dark:border-slate-600 bg-slate-50 dark:bg-slate-800/30 rounded-xl p-8 text-center hover:border-primary dark:hover:border-green-400 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-5xl text-slate-300 dark:text-slate-600 mb-4 transition-colors"></i>
+                        <h3 class="text-2xl font-bold text-slate-800 dark:text-white mb-3">Visión a Futuro</h3>
+                        <p class="text-slate-600 dark:text-slate-400 text-lg leading-relaxed">
+                            Me encuentro en preparación continua. Mi objetivo a mediano plazo es consolidar mis conocimientos para que <strong class="text-slate-800 dark:text-slate-200">pronto estaré ofreciendo servicios basados en Blue Team (defensa) o Red Team (ofensiva)</strong>. Mientras tanto, sigo construyendo mis bases en infraestructura y soporte IT.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sección Contacto -->
+        <section id="contacto" class="py-20 px-4 bg-slate-900 dark:bg-black text-white border-t border-slate-800 transition-colors">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">¿Hablamos?</h2>
+                <p class="text-slate-400 mb-10 max-w-2xl mx-auto">
+                    Ya sea que necesites asistencia técnica presencial en <span class="text-slate-200">Caracas</span> o quieras discutir sobre oportunidades en Service Desk y IT, estoy disponible a través de mis redes:
+                </p>
+
+                <div class="flex flex-wrap justify-center items-center gap-6 md:gap-8 mb-8">
+
+                    <!-- Email -->
+                    <a href="mailto:tu-correo@ejemplo.com" class="group flex flex-col items-center gap-2" title="Enviar Correo">
+                        <div class="w-14 h-14 bg-slate-800 group-hover:bg-primary dark:group-hover:bg-cyber rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-primary/50 dark:group-hover:shadow-cyber/50">
+                            <i class="fa-regular fa-envelope text-2xl text-slate-300 group-hover:text-white dark:group-hover:text-slate-900 transition-colors"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">Email</span>
+                    </a>
+
+                    <!-- WhatsApp -->
+                    <a href="https://wa.me/58XXXXXXXXXX" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2" title="Escribir por WhatsApp">
+                        <div class="w-14 h-14 bg-slate-800 group-hover:bg-[#25D366] rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-[#25D366]/50">
+                            <i class="fa-brands fa-whatsapp text-2xl text-slate-300 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">WhatsApp</span>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/RaykelJosue/" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2" title="Ver GitHub">
+                        <div class="w-14 h-14 bg-slate-800 group-hover:bg-[#333] dark:group-hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-[#333]/50 dark:group-hover:shadow-white/50">
+                            <i class="fa-brands fa-github text-2xl text-slate-300 group-hover:text-white dark:group-hover:text-slate-900 transition-colors"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">GitHub</span>
+                    </a>
+
+                    <!-- Instagram -->
+                    <a href="https://instagram.com/py_kel" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2" title="Seguir en Instagram">
+                        <div class="w-14 h-14 bg-slate-800 relative rounded-full flex items-center justify-center overflow-hidden transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-[#f09433] via-[#e6683c] to-[#bc1888] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <i class="fa-brands fa-instagram text-2xl text-slate-300 group-hover:text-white transition-colors relative z-10"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">Instagram</span>
+                    </a>
+
+                    <!-- TikTok -->
+                    <a href="https://tiktok.com/@TU_USUARIO" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2" title="Ver TikTok">
+                        <div class="w-14 h-14 bg-slate-800 group-hover:bg-black dark:group-hover:bg-white rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-black/50 dark:group-hover:shadow-white/50 border border-transparent group-hover:border-[#00f2fe]/50">
+                            <i class="fa-brands fa-tiktok text-2xl text-slate-300 group-hover:text-white dark:group-hover:text-black transition-colors"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">TikTok</span>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://linkedin.com/in/TU_USUARIO" target="_blank" rel="noopener noreferrer" class="group flex flex-col items-center gap-2" title="Conectar en LinkedIn">
+                        <div class="w-14 h-14 bg-slate-800 group-hover:bg-[#0077b5] rounded-full flex items-center justify-center transition-all duration-300 transform group-hover:-translate-y-1 group-hover:shadow-lg group-hover:shadow-[#0077b5]/50">
+                            <i class="fa-brands fa-linkedin-in text-2xl text-slate-300 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-xs text-slate-400 group-hover:text-slate-200 opacity-0 group-hover:opacity-100 transition-opacity">LinkedIn</span>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-950 dark:bg-black text-slate-500 py-6 text-center text-sm">
+        <p>&copy; <span id="year"></span> PyKel</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/main.js"></script>
+</body>
+</html>
